@@ -33,6 +33,7 @@ class BffController {
     }
 
     @PostMapping("byQueryBody")
+    @ResponseStatus(HttpStatus.CREATED)
     public Shop getShop3(@RequestBody @NotNull ShopQueryBody shopQueryBody){
         Shop shop = new Shop();
         shop.setProvince(shopQueryBody.getProvince());
