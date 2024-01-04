@@ -2,7 +2,7 @@ package com.dbacc.controller;
 
 
 import com.dbacc.domain.Shop;
-import com.dbacc.domain.ShopQueryBody;
+import com.dbacc.domain.ShopRecordBody;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -34,9 +34,9 @@ class BffController {
 
     @PostMapping("byQueryBody")
     @ResponseStatus(HttpStatus.CREATED)
-    public Shop getShop3(@RequestBody @NotNull ShopQueryBody shopQueryBody){
+    public Shop getShop3(@RequestBody @NotNull ShopRecordBody shopRecordBody){
         Shop shop = new Shop();
-        shop.setProvince(shopQueryBody.getProvince());
+        shop.setProvince(shopRecordBody.getProvCity());
         //shop.setStatus(shopQueryBody.getStatus());
 
         return shop;
